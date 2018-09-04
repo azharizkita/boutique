@@ -1,0 +1,58 @@
+
+CREATE TABLE Baju(
+	id_baju VARCHAR(12) NOT NULL,
+	nama_baju VARCHAR (25) NOT NULL,
+	spesifikasi VARCHAR (25) NOT NULL,
+	bahan VARCHAR (20) NOT NULL,	
+	harga NUMBER NOT NULL,
+	kuantitas VARCHAR (25) NOT NULL,
+CONSTRAINT Baju_PK PRIMARY KEY (id_baju)
+);
+
+CREATE TABLE Bahan(
+	id_bahan VARCHAR (12) NOT NULL,
+	nama_bahan VARCHAR (25) NOT NULL,
+	harga NUMBER NOT NULL,
+CONSTRAINT Bahan_PK PRIMARY KEY (id_bahan)
+);
+
+CREATE TABLE User(
+	id VARCHAR (12) NOT NULL,
+	id_tipe VARCHAR (12) NOT NULL,
+	username VARCHAR (20) NOT NULL,
+	password VARCHAR (25) NOT NULL,
+	nama VARCHAR (25) NOT NULL,
+	email VARCHAR (25) NOT NULL,
+	tanggal DATE NOT NULL,
+CONSTRAINT User_PK PRIMARY KEY (id)
+CONSTRAINT User_FK1 FOREIGN KEY (id_tipe) REFERENCES Tipe
+);
+
+CREATE TABLE Pesanan(
+	id_pesanan VARCHAR (12) NOT NULL,
+	id_Bahan VARCHAR (12) NOT NULL,
+	id_baju VARCHAR (12) NOT NULL,
+	nama_pesanan VARCHAR (25) NOT NULL,
+	harga NUMBER NOT NULL,
+	status_pesanan VARCHAR (12) NOT NULL,
+	tanggal_pesanan DATE NOT NULL,
+CONSTRAINT Pesanan_PK PRIMERY KEY (id_pesanan)
+CONSTRAINT Pesanan_FK1 FOREIGN KEY (id_baju) REFERENCES Baju
+CONSTRAINT Pesanan_FK2 FOREIGN KEY (id_bahan) REFERENCES Bahan
+);
+
+CREATE TABLE Tipe(
+	id_tipe VARCHAR (12) NOT NULL,
+	nama_tipe VARCHAR (25) NOT NULL,
+CONSTRAINT Tipe_PK PRIMARY KEY (id_tipe)
+);
+
+
+CREATE TABLE Pembayaran(
+	id_pembayaran VARCHAR (12) NOT NULL,
+	id VARCHAR (12) NOT NULL,
+	id_bahan VARCHAR (12) NOT NULL,
+CONSTRAINT Pembayaran_PK PRIMARY KEY (id_pembayaran)
+CONSTRAINT Pembayaran_FK1 FOREIGN KEY (id) REFERENCES User(id)
+CONSTRAINT Pembayaran_FK2 FOREIGN KEY (id_bahan) REFERENCES Bahan (id_bahan)
+);
