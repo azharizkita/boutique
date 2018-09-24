@@ -18,7 +18,9 @@ class Admin_m extends CI_Model
    {
       return $this->db->get('baju');
    }
-      redirect('pages/kasir');
+         function getPesanan()
+   {
+      return $this->db->get('pesanan');
    }
 }
 
