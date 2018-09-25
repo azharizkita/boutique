@@ -10,26 +10,21 @@ class Pelanggan extends CI_Controller
    }
    public function index()
    {
-      if ($this->login_m->logged_id()) {
-            if ($this->session->userdata('user_type')=="Pelanggan"){
-            $post['pesanan'] = $this->pelanggan_m->getData()->result();
-            $post['bahan'] = $this->pelanggan_m->getBahan()->result();
-            $post['user'] = $this->pelanggan_m->getUser()->result();
-                $this->load->view("page/header");
-                $this->load->view("page/content/pelanggan", $post);
-                $this->load->view("page/footer");
-            } elseif ($this->session->userdata('user_type')=="Penjahit") {
-                redirect('pages/penjahit');
-            } elseif ($this->session->userdata('user_type')=="Supplier") {
-                redirect('pages/supplier');
-            } elseif ($this->session->userdata('user_type')=="Kasir") {
-                redirect('pages/kasir');
-            } else {
-                redirect('pages/admin');
-            }
-      } else {
-         redirect("login");
-      }
+        if ($this->session->userdata('user_priv')=="Member"){
+            $this->load->view("header");
+            $this->load->view("content/pelanggan");
+            $this->load->view("footer");
+        } elseif ($this->session->userdata('user_priv')=="Penjahit") {
+            redirect('penjahit');
+        } elseif ($this->session->userdata('user_priv')=="Supplier") {
+            redirect('supplier');
+        } elseif ($this->session->userdata('user_priv')=="Kasir") {
+            redirect('kasir');
+        } elseif($this->session->userdata('user_priv')=="Admin") {
+            redirect('admin');
+        } else {
+            redirect('login');
+        }
    }
    public function upload()
    {

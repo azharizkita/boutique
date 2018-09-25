@@ -6,36 +6,29 @@ class Kasir extends CI_Controller
    {
       parent::__construct();
       $this->load->model('login_m');
-      $this->load->model('kasir_m');
+      $this->load->model('admin_m');
    }
    public function index()
    {
-      if ($this->login_m->logged_id()) {
-            if ($this->session->userdata('user_type')=="Pelanggan"){
-                redirect('pages/pelanggan');
-            } elseif ($this->session->userdata('user_type')=="Penjahit") {
-                redirect('pages/penjahit');
-            } elseif ($this->session->userdata('user_type')=="Supplier") {
-                redirect('pages/supplier');
-            } elseif ($this->session->userdata('user_type')=="Kasir") {
-            $post['transaksi'] = $this->kasir_m->getData()->result();
-                $this->load->view("page/header");
-                $this->load->view("page/content/kasir",$post);
-                $this->load->view("page/footer");
-            } else {
-                redirect('pages/admin');
-            }
-      } else {
-         redirect("login");
-      }
+        if ($this->session->userdata('user_priv')=="Member"){
+            redirect('pelanggan');
+        } elseif ($this->session->userdata('user_priv')=="Penjahit") {
+            redirect('penjahit');
+        } elseif ($this->session->userdata('user_priv')=="Supplier") {
+            redirect('supplier');
+        } elseif ($this->session->userdata('user_priv')=="Kasir") {
+            $this->load->view("header");
+            $this->load->view("content/kasir");
+            $this->load->view("footer");
+        } elseif($this->session->userdata('user_priv')=="Admin") {
+            redirect("admin");
+        } else {
+            redirect('login');
+        }
    }
-   public function accept()
+   public function upload()
    {
-      $this->kasir_m->acc();
-   }
-   public function update()
-   {
-      $this->kasir_m->upStatus();
+      $this->pelanggan_m->upload();
    }
    public function logout()
    {

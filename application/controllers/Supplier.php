@@ -6,32 +6,29 @@ class Supplier extends CI_Controller
    {
       parent::__construct();
       $this->load->model('login_m');
-      $this->load->model('supplier_m');
+      $this->load->model('admin_m');
    }
    public function index()
    {
-      if ($this->login_m->logged_id()) {
-         if ($this->session->userdata('user_type') == "Pelanggan") {
-            redirect('pages/pelanggan');
-         } elseif ($this->session->userdata('user_type') == "Penjahit") {
-            redirect('pages/penjahit');
-         } elseif ($this->session->userdata('user_type') == "Supplier") {
-            $post['stock'] = $this->supplier_m->getData()->result();
-            $this->load->view("page/header");
-            $this->load->view("page/content/supplier", $post);
-            $this->load->view("page/footer");
-         } elseif ($this->session->userdata('user_type') == "Kasir") {
-            redirect('pages/kasir');
-         } else {
-            redirect('pages/admin');
-         }
-      } else {
-         redirect("login");
-      }
+        if ($this->session->userdata('user_priv')=="Member"){
+            redirect('pelanggan');
+        } elseif ($this->session->userdata('user_priv')=="Penjahit") {
+            redirect("penjahit");
+        } elseif ($this->session->userdata('user_priv')=="Supplier") {
+            $this->load->view("header");
+            $this->load->view("content/supplier");
+            $this->load->view("footer");
+        } elseif ($this->session->userdata('user_priv')=="Kasir") {
+            redirect("kasir");
+        } elseif($this->session->userdata('user_priv')=="Admin") {
+            redirect("admin");
+        } else {
+            redirect('login');
+        }
    }
-   public function add()
+   public function upload()
    {
-      $this->supplier_m->add();
+      $this->pelanggan_m->upload();
    }
    public function logout()
    {
