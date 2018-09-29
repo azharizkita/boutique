@@ -5,12 +5,11 @@ class Penjahit extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('login_m');
-      $this->load->model('admin_m');
+      $this->load->model('pesanan_m');
    }
    public function index()
    {
-        if ($this->session->userdata('user_priv')=="Member"){
+        if ($this->session->userdata('user_priv')=="Pelanggan"){
             redirect('pelanggan');
         } elseif ($this->session->userdata('user_priv')=="Penjahit") {
             $this->load->view("header");
@@ -23,16 +22,24 @@ class Penjahit extends CI_Controller
         } elseif($this->session->userdata('user_priv')=="Admin") {
             redirect("admin");
         } else {
-            redirect('login');
+            redirect('greeter');
         }
    }
-   public function upload()
+   public function updateStatusPesanan()
    {
-      $this->pelanggan_m->upload();
+        $this->pesanan_m->updateStatusPesanan(
+            $this->input->post('status'),
+            $this->session->userdata('user_id'),
+            $this->input->post('id'),
+            "To be accepted",
+            $this->input->post('pelanggan'),
+            $this->input->post('jumlah'),
+            $this->input->post('harga')
+        );
    }
    public function logout()
    {
       $this->session->sess_destroy();
-      redirect('login');
+      redirect('greeter');
    }
 }

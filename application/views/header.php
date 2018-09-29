@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="<?php echo base_url('assets/js/')?>popper.js"></script>
 		<script src="<?php echo base_url('assets/js/')?>bootstrap.min.js"></script>
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/')?>bootstrap.min.css">
-	</head>
+  </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#"><?php echo $this->session->userdata("user_nama") ?> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./<?php echo $this->session->userdata("user_priv"); ?>/logout">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>

@@ -5,12 +5,11 @@ class Admin extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('login_m');
       $this->load->model('admin_m');
    }
    public function index()
    {
-        if ($this->session->userdata('user_priv')=="Member"){
+        if ($this->session->userdata('user_priv')=="Pelanggan"){
             redirect('pelanggan');
         } elseif ($this->session->userdata('user_priv')=="Penjahit") {
             redirect('penjahit');
@@ -23,16 +22,16 @@ class Admin extends CI_Controller
             $this->load->view("content/admin");
             $this->load->view("footer");
         } else {
-            redirect('login');
+            redirect('greeter');
         }
    }
-   public function upload()
+   public function getDataPesanan()
    {
-      $this->pelanggan_m->upload();
+      $this->admin_m->upload();
    }
    public function logout()
    {
       $this->session->sess_destroy();
-      redirect('login');
+      redirect('greeter');
    }
 }

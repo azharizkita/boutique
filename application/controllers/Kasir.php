@@ -5,12 +5,11 @@ class Kasir extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('login_m');
-      $this->load->model('admin_m');
+      $this->load->model('resi_m');
    }
    public function index()
    {
-        if ($this->session->userdata('user_priv')=="Member"){
+        if ($this->session->userdata('user_priv')=="Pelanggan"){
             redirect('pelanggan');
         } elseif ($this->session->userdata('user_priv')=="Penjahit") {
             redirect('penjahit');
@@ -21,18 +20,31 @@ class Kasir extends CI_Controller
             $this->load->view("content/kasir");
             $this->load->view("footer");
         } elseif($this->session->userdata('user_priv')=="Admin") {
-            redirect("admin");
+            redirect('admin');
         } else {
-            redirect('login');
+            redirect('greeter');
         }
    }
-   public function upload()
+   
+   public function acceptPembayaran()
    {
-      $this->pelanggan_m->upload();
+        return $this->resi_m->acceptPembayaran(
+            $this->input->post('statusUp'),
+            $this->input->post('id')
+        );
    }
+
+   public function updateStatusPembayaran()
+   {
+        return $this->resi_m->updateStatusPembayaran(
+            $this->input->post('status'),
+            $this->input->post('id')
+        );
+   }
+
    public function logout()
    {
       $this->session->sess_destroy();
-      redirect('login');
+      redirect('greeter');
    }
 }

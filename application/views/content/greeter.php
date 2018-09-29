@@ -13,11 +13,11 @@
 <body>
 
 <form class="form-signin animated fadeIn"
-	  method="POST" action="<?php echo base_url() ?>index.php/login">
+	  method="POST" action="<?php echo base_url() ?>index.php/greeter/login">
 	<div class="text-center mb-4">
 		<h1 class="mb-4">Welcome</h1>
-		<?php if (isset($data)) {
-			echo $data->error;
+		<?php if (isset($error)) {
+			echo $error;
 		}; ?></div>
 
 	<div class="form-label-group">
@@ -56,7 +56,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/register">
+				<form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/greeter/register">
 					<div class="form-label-group">
 						<input id="inputName" class="form-control" placeholder="Name" required="" autofocus=""
 							   type="text"

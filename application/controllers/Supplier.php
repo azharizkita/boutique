@@ -5,12 +5,11 @@ class Supplier extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('login_m');
-      $this->load->model('admin_m');
+      $this->load->model('bahan_m');
    }
    public function index()
    {
-        if ($this->session->userdata('user_priv')=="Member"){
+        if ($this->session->userdata('user_priv')=="Pelanggan"){
             redirect('pelanggan');
         } elseif ($this->session->userdata('user_priv')=="Penjahit") {
             redirect("penjahit");
@@ -23,16 +22,22 @@ class Supplier extends CI_Controller
         } elseif($this->session->userdata('user_priv')=="Admin") {
             redirect("admin");
         } else {
-            redirect('login');
+            redirect('greeter');
         }
    }
-   public function upload()
+
+   public function addBahan()
    {
-      $this->pelanggan_m->upload();
+      $this->bahan_m->addBahan(
+        $this->input->post('kuantitas') + $this->input->post('kuantitasO'),
+        $this->session->userdata('user_id'),
+        $this->input->post('id')
+      );
    }
+   
    public function logout()
    {
       $this->session->sess_destroy();
-      redirect('login');
+      redirect('greeter');
    }
 }
