@@ -7,7 +7,7 @@
         }
         // $this->db->get_where('bahan', array('id' => $post->bahan_id))->result();
     ?>
-        <div class="col">
+        <div class="col" style="padding-top: 25px">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
                     <h5 class="card-title"><?php echo $post->nama;?></h5>

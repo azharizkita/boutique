@@ -39,7 +39,7 @@
             }
         }
     ?>
-        <div class="col">
+        <div class="col" style="padding-top: 25px">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
                     <h5 class="card-title"><?php echo $namaUser;?></h5>

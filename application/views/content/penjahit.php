@@ -13,7 +13,7 @@
         }
         $this->db->get_where('bahan', array('id' => $post->bahan_id))->result();
     ?>
-        <div class="col">
+        <div class="col" style="padding-top: 25px">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<?php echo base_url('/assets/images/uploads/pesanan/')?><?php echo $post->gambar?>" alt="Card image cap">
                 <div class="card-header">
