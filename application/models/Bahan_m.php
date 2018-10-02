@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Bahan_m extends CI_Model
 {
+    public function getBahan()
+    {
+       return $this->db->get('bahan')->result();
+    }
+    
     public function createBahan()
     {
         $data = array(

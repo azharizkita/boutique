@@ -2,6 +2,11 @@
     <div class="row">
     <?php 
     $pesanan = $this->db->get('pesanan')->result();
+    if ($this->db->get('pesanan')->num_rows() == 0) {
+        ?>
+        <p class="text-center display-4">Saat ini belum ada pesanan pelanggan :(</p>
+        <?php
+    }
     foreach ($pesanan as $post) {
         foreach ($this->db->get_where('bahan', array('id' => $post->bahan_id))->result() as $parseBahan) {
             $namaBahan = $parseBahan->nama;
@@ -27,7 +32,7 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" style="position: fixed; right: 15px; bottom: 15px; z-index: 5" class="floating btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Pesan Item
 </button>
 
@@ -48,7 +53,7 @@
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Baju Kemeja Keren">
             </div>
             <div class="form-group">
-            <label for="bahan"></label>
+            <label for="bahan">Bahan</label>
             <select class="form-control" id="bahan" name="bahan">
             <?php $listBahan = $this->db->get('bahan')->result();
                 foreach ($listBahan as $bahan) {

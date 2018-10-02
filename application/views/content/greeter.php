@@ -8,14 +8,20 @@
 	<script src="<?php echo base_url('assets/js/')?>bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/')?>bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/')?>floatingLable.css">
-
+<style>
+body{
+    background-image: url("../assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
 </head>
-<body>
+<body >
 
 <form class="form-signin animated fadeIn"
-	  method="POST" action="<?php echo base_url() ?>index.php/greeter/login">
+	  method="POST" action="<?php echo base_url() ?>index.php/greeter/login" style="background: rgba(227,232,231,0.75); border-radius: 5px">
 	<div class="text-center mb-4">
-		<h1 class="mb-4">Welcome</h1>
+		<h1 class="mb-4 display-3">Welcome</h1>
 		<?php if (isset($error)) {
 			echo $error;
 		}; ?></div>

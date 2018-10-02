@@ -1,6 +1,11 @@
 <div class="container">
     <div class="row">
     <?php 
+        if ($this->db->get('resi')->num_rows() == 0) {
+            ?>
+            <p class="text-center display-4">Saat ini belum ada resi tercetak :(</p>
+            <?php
+        }
     foreach ($this->db->get('resi')->result() as $post) {
         if ($this->db->get_where('user', array('id' => $post->penjahit_id))->num_rows() == 0) {
             $namaPenjahit = "-";

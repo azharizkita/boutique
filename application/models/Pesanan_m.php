@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Pesanan_m extends CI_Model
 {
+      public function getPesanan()
+      {
+         return $this->db->get('pesanan')->result();
+      }
       public function uploadPesanan($nama, $gambar, $tipe, $ukuran, $bahan, $pelanggan, $jumlah, $status, $harga)
       {
             $data = array(

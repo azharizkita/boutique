@@ -1,21 +1,8 @@
-<div class="container">
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Report
+<button type="button" style="position: fixed; right: 15px; bottom: 15px; z-index: 5" class="floating btn btn-primary" data-toggle="modal" data-target="#newCloth">
+    New clothing entry
 </button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Progress Report</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="container">
-
+<div class="container">
 <h1 class="display-4 text-center"><hr>User<hr></h1>
 <table class="table">
     <thead class="thead-dark">
@@ -27,7 +14,15 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($this->db->get('user')->result() as $user) {
+        <?php 
+        if ($this->db->get('user')->num_rows() == 0) {
+            ?>
+            <tr>
+                <td colspan="4">Tidak ada data</td>
+            </tr>
+            <?php
+        }
+        foreach ($this->db->get('user')->result() as $user) {
             ?>
             <tr>
                 <td><?php echo $user->username?></td>
@@ -56,7 +51,15 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($this->db->get('pesanan')->result() as $pesanan) {
+        <?php 
+        if ($this->db->get('pesanan')->num_rows() == 0) {
+            ?>
+            <tr>
+                <td colspan="8" class="text-center"><strong>Tidak ada data</strong></td>
+            </tr>
+            <?php
+        }
+        foreach ($this->db->get('pesanan')->result() as $pesanan) {
             if ($pesanan->penjahit_id == null) {
                 $namaPenjahit = "-";
             } else {
@@ -103,7 +106,15 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($this->db->get('resi')->result() as $resi) {
+        <?php 
+        if ($this->db->get('resi')->num_rows() == 0) {
+            ?>
+            <tr>
+                <td colspan="9" class="text-center"><strong>Tidak ada data</strong></td>
+            </tr>
+            <?php
+        }
+        foreach ($this->db->get('resi')->result() as $resi) {
             if ($resi->penjahit_id == null) {
                 $namaPenjahit = "-";
             } else {
@@ -165,7 +176,15 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($this->db->get('bahan')->result() as $bahan) {
+        <?php 
+        if ($this->db->get('bahan')->num_rows() == 0) {
+            ?>
+            <tr>
+                <td colspan="5" class="text-center"><strong>Tidak ada data</strong></td>
+            </tr>
+            <?php
+        }
+        foreach ($this->db->get('bahan')->result() as $bahan) {
             foreach ($this->db->get_where('user', array('id' => $bahan->supplier_id))->result() as $supplier) {
                 $namaSupplier = $supplier->nama;
             }
@@ -183,13 +202,83 @@
 <hr>
 <br>
 
-</div>
+<div class="modal fade" id="newCloth" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  <?php echo form_open_multipart('admin/createPakaian'); ?>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Clothing</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Print</button>
+      <div class="modal-body">
+        
+        <div class="form-group">
+            <label for="nama">Nama Pakaian</label>
+            <input type="text" class="form-control" id="nama" name="nama" placeholder="Baju Kemeja Keren">
+            </div>
+
+            <div class="form-group">
+            <label for="spesifikasi">Spesifikasi</label>
+            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" placeholder="Dingin dan nyaman dipakai">
+            </div>
+            
+            <div class="form-group">
+            <label for="bahan">Bahan</label>
+            <select class="form-control" id="bahan" name="bahan">
+            <?php $listBahan = $this->db->get('bahan')->result();
+                foreach ($listBahan as $bahan) {
+                    ?>
+                    <option value="<?php echo $bahan->id?>"><?php echo $bahan->nama?></option>
+                    <?php
+                }
+            ?>
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="tipe">Tipe Bahan</label>
+            <select class="form-control" id="tipe" name="tipe">
+                <option value="Kaus">Kaus</option>
+                <option value="Kemeja">Kemeja</option>
+                <option value="Jaket">Jaket</option>
+                <option value="Jas">Jas</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="ukuran">Ukuran</label>
+            <select multiple class="form-control" id="ukuran" name="ukuran">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="nama">Jumlah</label>
+            <input type="number" value="1" min="1" class="form-control" id="kuantitas" name="kuantitas">
+            </div>
+            <div class="form-group">
+            <label for="nama">Harga</label>
+            <input type="number" value="1" min="1" class="form-control" id="harga" name="harga">
+            </div>
+            <br>
+            <div class="input-group">
+            <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="fileInput" aria-describedby="inputGroupFileAddon04">
+            <label class="custom-file-label" for="fileInput">Choose file</label>
+            </div>
+            </div>
+
+        </form>
       </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
     </div>
   </div>
 </div>
+
 </div>

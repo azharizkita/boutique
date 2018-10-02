@@ -44,7 +44,7 @@ class Pelanggan extends CI_Controller
             }
       }
       $config['upload_path'] = './assets/images/uploads/pesanan/';
-      $config['allowed_types'] = 'jpg';
+      $config['allowed_types'] = 'jpg|jpeg|png';
       $config['max_size'] = 0;
       $config['file_name'] = 'pesanan_'.$this->input->post('nama');
       $this->load->library('upload', $config);

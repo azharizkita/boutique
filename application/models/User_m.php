@@ -7,18 +7,29 @@ class User_m extends CI_Model
 		return $this->session->userdata('user_id');
     }
     
-	function login($table, $field1, $field2)
+	function login($username, $password)
 	{
 		$this->db->select('*');
-		$this->db->from($table);
-		$this->db->where($field1);
-		$this->db->where($field2);
+		$this->db->from('user');
+		$this->db->where($username);
+		$this->db->where($password);
 		$this->db->limit(1);
 		$query = $this->db->get();
 		if ($query->num_rows() == 0) {
 			return FALSE;
 		} else {
-			return $query->result();
+			$loginData = $query->result();
+			foreach ($loginData as $data) {
+				$session_data = array(
+					'user_id' => $data->id,
+					'user_name' => $data->username,
+					'user_mail' => $data->email,
+					'user_nama' => $data->nama,
+					'user_priv' => $data->privilege
+				);
+				$this->session->set_userdata($session_data);
+			}
+			return TRUE;
 		}
     }
     

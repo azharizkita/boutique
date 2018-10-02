@@ -32,19 +32,9 @@ class Greeter extends CI_Controller
 			if ($this->form_validation->run() == TRUE) {
 				$username = $this->input->post("username", TRUE);
 				$password = $this->input->post('password', TRUE);
-				$checking = $this->user_m->login('user', array('username' => $username), array('password' => $password));
+				$checking = $this->user_m->login(array('username' => $username), array('password' => $password));
 				if ($checking != FALSE) {
-					foreach ($checking as $data) {
-						$session_data = array(
-							'user_id' => $data->id,
-							'user_name' => $data->username,
-							'user_mail' => $data->email,
-							'user_nama' => $data->nama,
-							'user_priv' => $data->privilege
-						);
-						$this->session->set_userdata($session_data);
-						redirect('greeter');
-					}
+					redirect('greeter');
 				} else {
 					$data['error'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
   									  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
