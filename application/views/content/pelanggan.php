@@ -50,7 +50,7 @@
         
         <div class="form-group">
             <label for="nama">Nama Pesanan</label>
-            <input type="text" class="form-control" id="nama" name="nama" placeholder="Baju Kemeja Keren">
+            <input type="text" class="form-control" required="" id="nama" name="nama" placeholder="Baju Kemeja Keren">
             </div>
             <div class="form-group">
             <label for="bahan">Bahan</label>
@@ -66,7 +66,7 @@
             </div>
             <div class="form-group">
             <label for="tipe">Tipe Bahan</label>
-            <select class="form-control" id="tipe" name="tipe">
+            <select class="form-control" id="tipe" name="tipe" required="">
                 <option value="Kaus">Kaus</option>
                 <option value="Kemeja">Kemeja</option>
                 <option value="Jaket">Jaket</option>
@@ -75,7 +75,7 @@
             </div>
             <div class="form-group">
             <label for="ukuran">Ukuran</label>
-            <select multiple class="form-control" id="ukuran" name="ukuran">
+            <select multiple class="form-control" id="ukuran" name="ukuran" required="">
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -85,11 +85,11 @@
             </div>
             <div class="form-group">
             <label for="nama">Jumlah</label>
-            <input type="number" value="1" min="1" class="form-control" id="jumlah" name="jumlah" placeholder="name@example.com">
+            <input type="number" value="1" min="1" required="" class="form-control" id="jumlah" name="jumlah" placeholder="name@example.com">
             </div>
             <div class="input-group">
             <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="fileInput" aria-describedby="inputGroupFileAddon04">
+            <input type="file" class="custom-file-input" required="" name="image" id="fileInput" aria-describedby="inputGroupFileAddon04">
             <label class="custom-file-label" for="fileInput">Choose file</label>
             </div>
             </div>
