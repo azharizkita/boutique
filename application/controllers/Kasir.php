@@ -29,6 +29,7 @@ class Kasir extends CI_Controller
    public function acceptPembayaran()
    {
         return $this->resi_m->acceptPembayaran(
+            $this->session->userdata('user_id'),
             $this->input->post('statusUp'),
             $this->input->post('id')
         );

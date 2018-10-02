@@ -6,9 +6,10 @@ class Resi_m extends CI_Model
     {
        return $this->db->get('resi')->result();
     }
-    public function acceptPembayaran($status, $id)
+    public function acceptPembayaran($kasir, $status, $id)
     {
         $data = array(
+            'kasir_id' => $kasir,
             'status' => $status
         );
         $this->db->where('id', $id);
