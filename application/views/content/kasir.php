@@ -23,6 +23,14 @@
             }
         }       
 
+        if ($this->db->get_where('pakaian', array('id' => $post->pakaian_id))->num_rows() == 0) {
+            $namaPakaian = "-";
+        } else {
+            foreach ($this->db->get_where('pakaian', array('id' => $post->pakaian_id))->result() as $parsePakaian) {
+                $namaPakaian = $parsePakaian->nama;
+            }
+        }  
+
         if ($this->db->get_where('user', array('id' => $post->kasir_id))->num_rows() == 0) {
             $namaKasir = "-";
         } else {
@@ -50,6 +58,7 @@
                         <li class="list-group-item"><strong>Penjahit: </strong><?php echo $namaPenjahit?></li>
                         <li class="list-group-item"><strong>Kasir: </strong><?php echo $namaKasir?></li>
                         <li class="list-group-item"><strong>Pesanan: </strong><?php echo $namaPesanan?></li>
+                        <li class="list-group-item"><strong>Pakaian: </strong><?php echo $namaPakaian?></li>
                         <li class="list-group-item"><strong>Total: </strong><?php echo $post->total?></li>
                         <li class="list-group-item"><strong>Harga: </strong><?php echo $post->harga?></li>
                         <?php if ($post->status == "To be accepted") {

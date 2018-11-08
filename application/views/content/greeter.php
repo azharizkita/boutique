@@ -10,13 +10,12 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/')?>floatingLable.css">
 <style>
 body{
-    background-image: url("../assets/images/bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 </style>
 </head>
-<body >
+<body style="background-image: url('<?php echo base_url('/assets/images/')?>bg.jpg') ">
 
 <form class="form-signin animated fadeIn"
 	  method="POST" action="<?php echo base_url() ?>index.php/greeter/login" style="background: rgba(227,232,231,0.75); border-radius: 5px">
@@ -27,14 +26,14 @@ body{
 		}; ?></div>
 
 	<div class="form-label-group">
-		<input id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="" type="text"
+		<input id="inputUsername" class="form-control" placeholder="Username" required autofocus="" type="text"
 			   name="username">
 		<label for="inputUsername">Username</label>
 		<?php echo form_error('username'); ?>
 	</div>
 
 	<div class="form-label-group">
-		<input id="inputPassword" class="form-control" placeholder="Password" required="" type="password"
+		<input id="inputPassword" class="form-control" placeholder="Password" required type="password"
 			   name="password">
 		<label for="inputPassword">Password</label>
 		<?php echo form_error('password'); ?>
@@ -64,24 +63,24 @@ body{
 			<div class="modal-body">
 				<form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/greeter/register">
 					<div class="form-label-group">
-						<input id="inputName" class="form-control" placeholder="Name" required="" autofocus=""
+						<input id="inputName" class="form-control" placeholder="Name" required autofocus=""
 							   type="text"
 							   name="nameR">
 						<label for="inputName">Name</label>
 					</div>
 					<div class="form-label-group">
-						<input id="inputEmail" class="form-control" placeholder="Email" required="" type="email"
+						<input id="inputEmail" class="form-control" placeholder="Email" required type="email"
 							   name="emailR">
 						<label for="inputEmail">Email</label>
 					</div>
 					<div class="form-label-group">
-						<input id="inputUsernameR" class="form-control" placeholder="Username" required="" type="text"
+						<input id="inputUsernameR" class="form-control" placeholder="Username" required type="text"
 							   name="usernameR">
 						<label for="inputUsernameR">Username</label>
 					</div>
 
 					<div class="form-label-group">
-						<input id="inputPasswordR" class="form-control" placeholder="Password" required=""
+						<input id="inputPasswordR" class="form-control" placeholder="Password" required
 							   type="password"
 							   name="passwordR">
 						<label for="inputPasswordR">Password</label>

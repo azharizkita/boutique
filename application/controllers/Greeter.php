@@ -57,11 +57,13 @@ class Greeter extends CI_Controller
 		$this->form_validation->set_rules('usernameR', 'Username', 'required');
 		$this->form_validation->set_rules('passwordR', 'Password', 'required');
 		if ($this->form_validation->run() == TRUE) {
-			$nama = $this->input->post("nameR", TRUE);
-			$email = $this->input->post("emailR", TRUE);
-			$username = $this->input->post("usernameR", TRUE);
-			$password = $this->input->post('passwordR', TRUE);
-			$checking = $this->user_m->register($nama, $email, $username, $password);
+			$RegistData = new $this->user_m($this->input->post("usernameR", TRUE));
+			$RegistData->setEmail($this->input->post("emailR", TRUE));
+			$RegistData->setNama($this->input->post("nameR", TRUE));
+			$RegistData->setPassword($this->input->post('passwordR', TRUE));
+			$RegistData->setPrivilege();
+
+			$checking = $this->user_m->register($RegistData);
 			if ($checking != FALSE) {
 				$data['error'] = '<div class="alert alert-success alert-dismissible fade show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -11,7 +11,7 @@ class Pelanggan extends CI_Controller
    {
         if ($this->session->userdata('user_priv')=="Pelanggan"){
             $this->load->view("header");
-            $this->load->view("content/pelanggan");
+            $this->load->view("content/pelanggan/home");
             $this->load->view("footer");
         } elseif ($this->session->userdata('user_priv')=="Penjahit") {
             redirect('penjahit');
@@ -27,22 +27,7 @@ class Pelanggan extends CI_Controller
    }
 
    public function uploadPesanan()
-   {
-      
-      $tipe = $this->input->post('tipe');
-      $bahan = $this->input->post('bahan');
-      $hargaTemp = $this->db->get_where('bahan', array('id' => $bahan))->result();
-      foreach ($hargaTemp as $hargaR) {
-            if ($hargaR->id==$bahan && $tipe=="Kaus"){
-                  $harga = ($hargaR->harga + 25000);
-            }elseif ($hargaR->id==$bahan && $tipe=="Kemeja"){
-                  $harga = ($hargaR->harga + 35000);
-            }elseif ($hargaR->id==$bahan && $tipe=="Jaket"){
-                  $harga = ($hargaR->harga + 45000);
-            }elseif ($hargaR->id==$bahan && $tipe=="Jas"){
-                  $harga = ($hargaR->harga + 55000);
-            }
-      }
+   {      
       $config['upload_path'] = './assets/images/uploads/pesanan/';
       $config['allowed_types'] = 'jpg|jpeg|png';
       $config['max_size'] = 0;
@@ -51,17 +36,31 @@ class Pelanggan extends CI_Controller
       if (!$this->upload->do_upload('image')) {
         redirect('pelanggan');
       } else {
-        $this->pesanan_m->uploadPesanan(
-            $this->input->post('nama'),
-            $this->upload->file_name,
-            $tipe,
-            $this->input->post('ukuran'),
-            $bahan,
-            $this->session->userdata('user_id'),
-            $this->input->post('jumlah'),
-            'To be confirmed',
-            $harga
-        );
+
+        $tipe = $this->input->post('tipe');
+        $bahan = $this->input->post('bahan');
+        $hargaTemp = $this->db->get_where('bahan', array('id' => $bahan))->result();
+        foreach ($hargaTemp as $hargaR) {
+              if ($hargaR->id==$bahan && $tipe=="Kaus"){
+                    $harga = ($hargaR->harga + 25000);
+              }elseif ($hargaR->id==$bahan && $tipe=="Kemeja"){
+                    $harga = ($hargaR->harga + 35000);
+              }elseif ($hargaR->id==$bahan && $tipe=="Jaket"){
+                    $harga = ($hargaR->harga + 45000);
+              }elseif ($hargaR->id==$bahan && $tipe=="Jas"){
+                    $harga = ($hargaR->harga + 55000);
+              }
+        }
+        $data = new $this->pesanan_m($this->input->post('nama'));
+        $data->setGambar($this->upload->file_name);
+        $data->setTipe($this->input->post('tipe'));
+        $data->setUkuran($this->input->post('ukuran'));
+        $data->setBahan((int)$this->input->post('bahan'));
+        $data->setPelanggan((int)$this->session->userdata('user_id'));
+        $data->setJumlah((int)$this->input->post('jumlah'));
+        $data->setStatus("To be confirmed");
+        $data->setHarga($harga);        
+        $this->pesanan_m->uploadPesanan($data);
         redirect('pelanggan');
       }
    }

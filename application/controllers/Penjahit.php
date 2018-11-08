@@ -6,6 +6,8 @@ class Penjahit extends CI_Controller
    {
       parent::__construct();
       $this->load->model('pesanan_m');
+      $this->load->model('resi_m');
+      $this->load->model('bahan_m');
    }
    public function index()
    {
@@ -30,13 +32,22 @@ class Penjahit extends CI_Controller
         $this->pesanan_m->updateStatusPesanan(
             $this->input->post('status'),
             $this->session->userdata('user_id'),
-            $this->input->post('id'),
-            "To be accepted",
-            $this->input->post('pelanggan'),
-            $this->input->post('jumlah'),
-            $this->input->post('harga')
+            $this->input->post('id')
         );
+
+        if ($this->input->post('status') == "Accepted") {
+            $data = new $this->resi_m($this->input->post('pelanggan'));
+            $data->setKasir();
+            $data->setPenjahit($this->session->userdata('user_id'));
+            $data->setPesanan($this->input->post('id'));
+            $data->setTotal($this->input->post('jumlah'));
+            $data->setHarga($this->input->post('harga'));
+            $data->setStatus("To be accepted");
+            $this->resi_m->createResi($data);
+        }
+        redirect('penjahit');
    }
+
    public function logout()
    {
       $this->session->sess_destroy();

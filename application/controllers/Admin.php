@@ -28,27 +28,25 @@
     public function createPakaian()
     {
         $config['upload_path'] = './assets/images/uploads/pakaian/';
-        $config['allowed_types'] = 'jpg';
+        $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = 0;
         $config['file_name'] = 'pesanan_'.$this->input->post('nama');
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('image')) {
           redirect('pelanggan');
         } else {
-          $this->pakaian_m->createPakaian(
-              $this->input->post('nama'),
-              $this->input->post('tipe'),
-              $this->input->post('bahan'),
-              $this->input->post('spesifikasi'),
-              $this->input->post('ukuran'),
-              $this->upload->file_name,
-              $this->input->post('kuantitas'),
-              $this->input->post('harga'),
-              "Boutique"
-          );
-          redirect('pelanggan');
+            $data = new $this->pakaian_m($this->input->post('nama'));
+            $data->setTipe($this->input->post('tipe'));
+            $data->setBahan($this->input->post('bahan'));
+            $data->setSpesifikasi($this->input->post('spesifikasi'));
+            $data->setUkuran($this->input->post('ukuran'));
+            $data->setGambar($this->upload->file_name);
+            $data->setKuantitas($this->input->post('kuantitas'));
+            $data->setHarga($this->input->post('harga'));
+            $data->setAuthor("Boutique");
+            $this->pakaian_m->createPakaian($data);
+            redirect('admin');
         }
-        $this->pakian_m->createPakaian();
         redirect('greeter');
     }
     public function logout()

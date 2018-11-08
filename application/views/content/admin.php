@@ -36,6 +36,50 @@
 <hr>
 <br>
 
+<h1 class="display-4 text-center"><hr>Pakaian<hr></h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Nama Pakaian</th>
+            <th>Tipe</th>
+            <th>Bahan</th>
+            <th>Spesifikasi</th>
+            <th>Ukuran</th>
+            <th>Kuantitas</th>
+            <th>Harga Satuan</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        if ($this->db->get('pakaian')->num_rows() == 0) {
+            ?>
+            <tr>
+                <td colspan="8" class="text-center"><strong>Tidak ada data</strong></td>
+            </tr>
+            <?php
+        }
+        foreach ($this->db->get('pakaian')->result() as $pakaian) {
+            foreach ($this->db->get_where('bahan', array('id' => $pakaian->bahan))->result() as $bahan) {
+                $namaBahan = $bahan->nama;
+            }
+            ?>
+            <tr>
+                <td><?php echo $pakaian->nama?></td>
+                <td><?php echo $pakaian->tipe?></td>
+                <td><?php echo $namaBahan?></td>
+                <td><?php echo $pakaian->spesifikasi?></td>
+                <td><?php echo $pakaian->ukuran?></td>
+                <td><?php echo $pakaian->kuantitas?></td>
+                <td><?php echo $pakaian->harga?></td>
+                <td><?php echo $pakaian->author_id?></td>
+            </tr>
+        <?php }?>
+    </tbody>
+</table>
+<hr>
+<br>
+
 <h1 class="display-4 text-center"><hr>Pesanan<hr></h1>
 <table class="table">
     <thead class="thead-dark">
@@ -132,7 +176,7 @@
             if ($resi->pakaian_id == null) {
                 $namaPakaian = "-";
             } else {
-                foreach ($this->db->get_where('user', array('id' => $resi->pakaian_id))->result() as $pakaian) {
+                foreach ($this->db->get_where('pakaian', array('id' => $resi->pakaian_id))->result() as $pakaian) {
                     $namaPakaian = $pakaian->nama;
                 }
             }
@@ -204,7 +248,6 @@
 
 <div class="modal fade" id="newCloth" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-  <?php echo form_open_multipart('admin/createPakaian'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">New Clothing</h5>
@@ -215,18 +258,19 @@
       <div class="modal-body">
         
         <div class="form-group">
+            <?php echo form_open_multipart('admin/createPakaian'); ?>
             <label for="nama">Nama Pakaian</label>
-            <input type="text" class="form-control" id="nama" name="nama" placeholder="Baju Kemeja Keren">
+            <input type="text" class="form-control" required id="nama" name="nama" placeholder="Baju Kemeja Keren">
             </div>
 
             <div class="form-group">
             <label for="spesifikasi">Spesifikasi</label>
-            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" placeholder="Dingin dan nyaman dipakai">
+            <input type="text" class="form-control" required id="spesifikasi" name="spesifikasi" placeholder="Dingin dan nyaman dipakai">
             </div>
             
             <div class="form-group">
             <label for="bahan">Bahan</label>
-            <select class="form-control" id="bahan" name="bahan">
+            <select class="form-control" required id="bahan" name="bahan">
             <?php $listBahan = $this->db->get('bahan')->result();
                 foreach ($listBahan as $bahan) {
                     ?>
@@ -238,7 +282,7 @@
             </div>
             <div class="form-group">
             <label for="tipe">Tipe Bahan</label>
-            <select class="form-control" id="tipe" name="tipe">
+            <select class="form-control" required id="tipe" name="tipe">
                 <option value="Kaus">Kaus</option>
                 <option value="Kemeja">Kemeja</option>
                 <option value="Jaket">Jaket</option>
@@ -247,35 +291,34 @@
             </div>
             <div class="form-group">
             <label for="ukuran">Ukuran</label>
-            <select multiple class="form-control" id="ukuran" name="ukuran">
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
+            <select multiple class="form-control" required id="ukuran" name="ukuran">
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
             </select>
             </div>
             <div class="form-group">
             <label for="nama">Jumlah</label>
-            <input type="number" value="1" min="1" class="form-control" id="kuantitas" name="kuantitas">
+            <input type="number" value="1" min="1" class="form-control" required id="kuantitas" name="kuantitas">
             </div>
             <div class="form-group">
             <label for="nama">Harga</label>
-            <input type="number" value="1" min="1" class="form-control" id="harga" name="harga">
+            <input type="number" value="1" min="1" class="form-control" required id="harga" name="harga">
             </div>
             <br>
             <div class="input-group">
             <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="fileInput" aria-describedby="inputGroupFileAddon04">
+            <input type="file" class="custom-file-input" required name="image" id="fileInput" aria-describedby="inputGroupFileAddon04">
             <label class="custom-file-label" for="fileInput">Choose file</label>
             </div>
             </div>
-
-        </form>
       </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
         </div>
     </div>
   </div>

@@ -47,6 +47,7 @@
                             ?>
                         </select>
                         <input type="text" name="id" value="<?php echo $post->id?>" hidden>
+                        <input type="text" name="bahan" value="<?php echo $post->bahan_id?>" hidden>
                         <input type="text" name="jumlah" value="<?php echo $post->jumlah?>" hidden>
                         <input type="text" name="harga" value="<?php echo $post->harga?>" hidden>
                         <input type="text" name="pelanggan" value="<?php echo $post->pelanggan_id?>" hidden>

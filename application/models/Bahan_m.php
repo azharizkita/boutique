@@ -2,25 +2,42 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Bahan_m extends CI_Model
 {
+    public function __construct($nama = NULL) {
+        $this->nama = $nama;
+    }
+
+    public function setSpesifikasi($spesifikasi = NULL)
+    {
+        $this->spesifikasi = $spesifikasi;
+    }
+
+    public function setHarga($harga = NULL)
+    {
+        $this->harga = $harga;
+    }
+
+    public function setKuantitas($kuantitas = NULL)
+    {
+        $this->kuantitas = $kuantitas;
+    }
+
+    public function setSupplier($supplier_id = NULL)
+    {
+        $this->supplier_id = $supplier_id;
+    }
+
     public function getBahan()
     {
-       return $this->db->get('bahan')->result();
+        return $this->db->get('bahan')->result();
     }
     
-    public function createBahan()
+    public function createBahan($data)
     {
-        $data = array(
-            'nama' => $this->input->post('nama'),
-            'spesifikasi' => $this->input->post('spesifikasi'),
-            'harga' => $this->input->post('harga'),
-            'kuantitas' => $this->input->post('kuantitas') + $this->input->post('kuantitasO'),
-            'supplier_id' => $this->session->userdata('user_id')
-        );
         $this->db->insert('bahan', $data);
         redirect('supplier');
     }
 
-    public function addBahan($kuantitas, $supplier, $id)
+    public function addKuantitas($kuantitas, $supplier, $id)
     {
         $data = array(
             'kuantitas' => $kuantitas,
@@ -29,5 +46,16 @@ class Bahan_m extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('bahan', $data);
         redirect('supplier');
+    }
+
+    public function uploadKuantitasPesanan($id, $jumlah)
+    {
+        $kuantitasTemp = $this->db->get_where('kuantitas', array('id' => $bahan))->result();
+        $data = array(
+            'kuantitas' => $kuantitasTemp - $jumlah
+        );
+        $this->db->set('kuantitas', $kuantitasTemp - $jumlah, FALSE);
+        $this->db->where('id', $id);
+        $this->db->update('bahan');
     }
 }

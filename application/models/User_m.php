@@ -2,6 +2,29 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User_m extends CI_Model
 {
+	public function __construct($username = NULL) {
+		$this->username = $username;
+	}
+
+	public function setEmail($email = NULL)
+	{
+		$this->email = $email;
+	}
+
+	public function setNama($nama = NULL)
+	{
+		$this->nama = $nama;
+	}
+
+	public function setPassword($password)
+	{
+		$this->password = $password;
+	}
+
+	public function setPrivilege($privilege = "Pelanggan")
+	{
+		$this->privilege = $privilege;
+	}
 	function logged_in()
 	{
 		return $this->session->userdata('user_id');
@@ -33,15 +56,8 @@ class User_m extends CI_Model
 		}
     }
     
-    function register($nama, $email, $username, $password)
+    function register($data)
 	{
-		$data = array(
-			'username' => $username,
-			'email' => $email,
-			'nama' => $nama,
-			'password' => $password,
-			'privilege' => 'Pelanggan'
-		);
 		if (!$this->db->insert('user', $data)) {
             return FALSE;
 		} else {
