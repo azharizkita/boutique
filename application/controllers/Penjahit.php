@@ -43,6 +43,13 @@ class Penjahit extends CI_Controller
             $data->setTotal($this->input->post('jumlah'));
             $data->setHarga($this->input->post('harga'));
             $data->setStatus("To be accepted");
+            // TESTING
+
+            // echo '<pre>';
+            // var_dump($data);
+            // echo '</pre>';
+
+            // TESTING
             $this->resi_m->createResi($data);
         }
         redirect('penjahit');

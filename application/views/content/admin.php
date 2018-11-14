@@ -281,7 +281,7 @@
             </select>
             </div>
             <div class="form-group">
-            <label for="tipe">Tipe Bahan</label>
+            <label for="tipe">Tipe Pakaian</label>
             <select class="form-control" required id="tipe" name="tipe">
                 <option value="Kaus">Kaus</option>
                 <option value="Kemeja">Kemeja</option>

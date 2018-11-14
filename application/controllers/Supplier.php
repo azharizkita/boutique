@@ -28,13 +28,19 @@ class Supplier extends CI_Controller
 
    public function createBahan()
    {
-       $data = new $this->bahan_m($this->input->post('cNama'));
-       $data->setSpesifikasi($this->input->post('cSpesifikasi'));
-       $data->setHarga((int)$this->input->post('cHarga'));
-       $data->setKuantitas((int)$this->input->post('cKuantitas'));
-       $data->setSupplier((int)$this->session->userdata('user_id'));
-       
-       $this->bahan_m->createBahan($data);
+        $data = new $this->bahan_m($this->input->post('cNama'));
+        $data->setSpesifikasi($this->input->post('cSpesifikasi'));
+        $data->setHarga((int)$this->input->post('cHarga'));
+        $data->setKuantitas((int)$this->input->post('cKuantitas'));
+        $data->setSupplier((int)$this->session->userdata('user_id'));
+        // TESTING
+
+        // echo '<pre>';
+        // var_dump($data);
+        // echo '</pre>';
+
+        // TESTING
+        $this->bahan_m->createBahan($data);
    }
 
    public function addKuantitas()

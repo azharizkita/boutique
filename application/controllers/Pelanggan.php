@@ -60,8 +60,15 @@ class Pelanggan extends CI_Controller
         $data->setJumlah((int)$this->input->post('jumlah'));
         $data->setStatus("To be confirmed");
         $data->setHarga($harga);        
-        $this->pesanan_m->uploadPesanan($data);
-        redirect('pelanggan');
+        // TESTING
+
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
+
+        // TESTING
+        // $this->pesanan_m->uploadPesanan($data);
+        // redirect('pelanggan');
       }
    }
 

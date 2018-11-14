@@ -33,6 +33,13 @@ class Greeter extends CI_Controller
 				$username = $this->input->post("username", TRUE);
 				$password = $this->input->post('password', TRUE);
 				$checking = $this->user_m->login(array('username' => $username), array('password' => $password));
+				// TESTING
+
+				// echo '<pre>';
+				// var_dump($checking);
+				// echo '</pre>';
+
+				// TESTING
 				if ($checking != FALSE) {
 					redirect('greeter');
 				} else {
@@ -62,8 +69,15 @@ class Greeter extends CI_Controller
 			$RegistData->setNama($this->input->post("nameR", TRUE));
 			$RegistData->setPassword($this->input->post('passwordR', TRUE));
 			$RegistData->setPrivilege();
+			// TESTING
 
+			// echo '<pre>';
+			// var_dump($RegistData);
+			// echo '</pre>';
+
+			// TESTING
 			$checking = $this->user_m->register($RegistData);
+
 			if ($checking != FALSE) {
 				$data['error'] = '<div class="alert alert-success alert-dismissible fade show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">

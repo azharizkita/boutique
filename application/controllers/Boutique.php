@@ -35,17 +35,24 @@ class Boutique extends CI_Controller
         $jumlah = $this->input->post('jumlah');
         $harga = $this->input->post('jumlah') * $this->input->post('harga');
 
-        $data = new $this->resi_m($this->session->userdata('user_id'));
+        $data = new $this->resi_m((int)$this->session->userdata('user_id'));
         $data->setKasir();
         $data->setPenjahit();
         $data->setPesanan();
-        $data->setPakaian($this->input->post('id'));
-        $data->setTotal($this->input->post('jumlah'));
-        $data->setHarga($this->input->post('jumlah') * $this->input->post('harga'));
+        $data->setPakaian((int)$this->input->post('id'));
+        $data->setTotal((int)$this->input->post('jumlah'));
+        $data->setHarga((int)$this->input->post('jumlah') * $this->input->post('harga'));
         $data->setStatus("To be accepted");
         $this->resi_m->createResi($data);
         redirect('boutique');
 
+        // TESTING
+
+        // echo '<pre>';
+        // var_dump($data);
+        // echo '</pre>';
+
+        // TESTING
    }
    public function logout()
    {
