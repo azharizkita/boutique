@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2018 at 02:11 PM
+-- Generation Time: Nov 23, 2018 at 02:01 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -42,9 +42,13 @@ CREATE TABLE `bahan` (
 --
 
 INSERT INTO `bahan` (`id`, `nama`, `spesifikasi`, `harga`, `kuantitas`, `supplier_id`) VALUES
-(5, 'Katun', 'Adem euy katun', 30000, 35, 5),
-(6, 'Jeans', 'Adem euy jeans', 45000, 22, 5),
-(7, 'Wol', 'Adem euy wol', 32000, 43, 5);
+(1, 'Katun', 'Dingin', 40000, 47, 5),
+(2, 'satin', 'original', 100000, 40, 5),
+(3, 'Flanel', '100% adem', 85000, 47, 5),
+(4, 'wool', 'Hangat', 80000, 47, 5),
+(5, 'Drill', 'Halus, lembut, serta dingin', 75000, 40, 5),
+(6, 'Chambray', 'Bagus', 80000, 47, 5),
+(7, 'Denim', 'Bagus, original', 100000, 11, 5);
 
 -- --------------------------------------------------------
 
@@ -54,13 +58,26 @@ INSERT INTO `bahan` (`id`, `nama`, `spesifikasi`, `harga`, `kuantitas`, `supplie
 
 CREATE TABLE `pakaian` (
   `id` int(11) NOT NULL,
+  `nama` varchar(130) NOT NULL,
   `tipe` varchar(30) NOT NULL,
   `bahan` int(11) NOT NULL,
   `spesifikasi` varchar(150) NOT NULL,
+  `ukuran` varchar(10) NOT NULL,
+  `gambar` varchar(130) NOT NULL,
   `kuantitas` int(11) NOT NULL,
   `harga` int(11) NOT NULL,
-  `author_id` int(11) NOT NULL
+  `author_id` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pakaian`
+--
+
+INSERT INTO `pakaian` (`id`, `nama`, `tipe`, `bahan`, `spesifikasi`, `ukuran`, `gambar`, `kuantitas`, `harga`, `author_id`) VALUES
+(2, 'Jaket Jeans', 'Jaket', 6, 'Warna hitam', 'S', 'pesanan_Jaket_Jeans.jpg', 1, 80000, 'Boutique'),
+(3, 'Kemeja Flanel', 'Kemeja', 3, 'Keren', 'M', 'pesanan_Kemeja_Flanel.jpg', 1, 90000, 'Boutique'),
+(4, 'Kemeja Satin', 'Kemeja', 2, 'Dingin', 'XS', 'pesanan_Kemeja_Satin.jpg', 1, 120000, 'Boutique'),
+(5, 'Baju baru banget', 'Kaus', 1, 'Original boutique', 'L', 'pesanan_Baju_baru_banget.png', 12, 120000, 'Boutique');
 
 -- --------------------------------------------------------
 
@@ -93,7 +110,7 @@ CREATE TABLE `resi` (
   `id` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `pelanggan_id` int(11) NOT NULL,
-  `kasir_id` int(11) NOT NULL,
+  `kasir_id` int(11) DEFAULT NULL,
   `penjahit_id` int(11) DEFAULT NULL,
   `pesanan_id` int(11) DEFAULT NULL,
   `pakaian_id` int(11) DEFAULT NULL,
@@ -157,7 +174,8 @@ ALTER TABLE `bahan`
 -- Indexes for table `pakaian`
 --
 ALTER TABLE `pakaian`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nama` (`nama`);
 
 --
 -- Indexes for table `pesanan`
@@ -202,13 +220,13 @@ ALTER TABLE `bahan`
 -- AUTO_INCREMENT for table `pakaian`
 --
 ALTER TABLE `pakaian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `resi`
