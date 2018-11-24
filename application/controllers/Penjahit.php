@@ -8,6 +8,7 @@ class Penjahit extends CI_Controller
       $this->load->model('pesanan_m');
       $this->load->model('resi_m');
       $this->load->model('bahan_m');
+      $this->load->library('unit_test');
    }
    public function index()
    {
@@ -43,16 +44,16 @@ class Penjahit extends CI_Controller
             $data->setTotal($this->input->post('jumlah'));
             $data->setHarga($this->input->post('harga'));
             $data->setStatus("To be accepted");
-            // TESTING
 
-            // echo '<pre>';
-            // var_dump($data);
-            // echo '</pre>';
-
-            // TESTING
-            $this->resi_m->createResi($data);
+            echo $this->unit->run(
+                $this->resi_m->createResi($data),
+                TRUE,
+                '<strong style="font-size: 30px;">Memasukan data kedalam tabel resi</strong>',
+                '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
+            );
+            ;
         }
-        redirect('penjahit');
+        // redirect('penjahit');
    }
 
    public function logout()

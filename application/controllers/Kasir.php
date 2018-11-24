@@ -33,6 +33,7 @@ class Kasir extends CI_Controller
             $this->input->post('statusUp'),
             $this->input->post('id')
         );
+        redirect('kasir');
    }
 
    public function updateStatusPembayaran()
@@ -41,6 +42,7 @@ class Kasir extends CI_Controller
             $this->input->post('status'),
             $this->input->post('id')
         );
+        redirect('kasir');
    }
 
    public function logout()

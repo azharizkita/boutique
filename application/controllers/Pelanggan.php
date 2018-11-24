@@ -6,6 +6,7 @@ class Pelanggan extends CI_Controller
    {
       parent::__construct();
       $this->load->model('pesanan_m');
+      $this->load->library('unit_test');
    }
    public function index()
    {
@@ -60,14 +61,14 @@ class Pelanggan extends CI_Controller
         $data->setJumlah((int)$this->input->post('jumlah'));
         $data->setStatus("To be confirmed");
         $data->setHarga($harga);        
-        // TESTING
 
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
+        echo $this->unit->run(
+            $this->pesanan_m->uploadPesanan($data),
+            TRUE,
+            '<strong style="font-size: 30px;">Memasukan data kedalam tabel pesanan</strong>',
+            '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
+        );
 
-        // TESTING
-        // $this->pesanan_m->uploadPesanan($data);
         // redirect('pelanggan');
       }
    }

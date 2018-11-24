@@ -58,10 +58,6 @@ class User_m extends CI_Model
     
     function register($data)
 	{
-		if (!$this->db->insert('user', $data)) {
-            return FALSE;
-		} else {
-            return TRUE;
-		}
+		return $this->db->insert('user', $data);
 	}
 }

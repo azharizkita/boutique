@@ -33,8 +33,7 @@ class Bahan_m extends CI_Model
     
     public function createBahan($data)
     {
-        $this->db->insert('bahan', $data);
-        redirect('supplier');
+        return $this->db->insert('bahan', $data);
     }
 
     public function addKuantitas($kuantitas, $supplier, $id)
@@ -44,8 +43,7 @@ class Bahan_m extends CI_Model
             'supplier_id' => $supplier
         );
         $this->db->where('id', $id);
-        $this->db->update('bahan', $data);
-        redirect('supplier');
+        return $this->db->update('bahan', $data);
     }
 
     public function uploadKuantitasPesanan($id, $jumlah)

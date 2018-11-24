@@ -6,6 +6,7 @@
     {
         parent::__construct();
         $this->load->model('pakaian_m');
+        $this->load->library('unit_test');
     }
     public function index()
     {
@@ -33,7 +34,7 @@
         $config['file_name'] = 'pesanan_'.$this->input->post('nama');
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('image')) {
-          redirect('pelanggan');
+          redirect('admin');
         } else {
             $data = new $this->pakaian_m($this->input->post('nama'));
             $data->setTipe($this->input->post('tipe'));
@@ -44,10 +45,16 @@
             $data->setKuantitas($this->input->post('kuantitas'));
             $data->setHarga($this->input->post('harga'));
             $data->setAuthor("Boutique");
-            $this->pakaian_m->createPakaian($data);
-            redirect('admin');
+
+            echo $this->unit->run(
+                $this->pakaian_m->createPakaian($data),
+                TRUE,
+                '<strong style="font-size: 30px;">Memasukan data kedalam tabel pakaian</strong>',
+                '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
+            );
+
+            // redirect('admin');
         }
-        redirect('greeter');
     }
     public function logout()
     {

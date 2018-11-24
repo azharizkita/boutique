@@ -49,7 +49,7 @@ class Resi_m extends CI_Model
 
     public function createResi($data)
     {
-        $this->db->insert('resi', $data);
+        return $this->db->insert('resi', $data);
     }
 
     public function acceptPembayaran($kasir, $status, $id)
@@ -60,7 +60,6 @@ class Resi_m extends CI_Model
         );
         $this->db->where('id', $id);
         $this->db->update('resi', $data);
-        redirect('kasir');
     }
     public function updateStatusPembayaran($status, $id)
     {
@@ -69,6 +68,5 @@ class Resi_m extends CI_Model
         );
         $this->db->where('id', $id);
         $this->db->update('resi', $data);
-        redirect('kasir');
     }
 }

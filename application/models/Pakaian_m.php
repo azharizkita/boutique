@@ -53,6 +53,6 @@ class Pakaian_m extends CI_Model
 
     public function createPakaian($data)
     {
-        $this->db->insert('pakaian', $data);
+        return $this->db->insert('pakaian', $data);
     }
 }

@@ -7,6 +7,7 @@ class Boutique extends CI_Controller
       parent::__construct();
       $this->load->model('pakaian_m');
       $this->load->model('resi_m');
+      $this->load->library('unit_test');
    }
    public function index()
    {
@@ -43,16 +44,14 @@ class Boutique extends CI_Controller
         $data->setTotal((int)$this->input->post('jumlah'));
         $data->setHarga((int)$this->input->post('jumlah') * $this->input->post('harga'));
         $data->setStatus("To be accepted");
-        $this->resi_m->createResi($data);
-        redirect('boutique');
-
-        // TESTING
-
-        // echo '<pre>';
-        // var_dump($data);
-        // echo '</pre>';
-
-        // TESTING
+        
+        echo $this->unit->run(
+            $this->resi_m->createResi($data),
+            TRUE,
+            '<strong style="font-size: 30px;">Memasukan data kedalam tabel resi</strong>',
+            '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
+        );
+        // redirect('boutique');
    }
    public function logout()
    {

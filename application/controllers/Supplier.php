@@ -6,6 +6,7 @@ class Supplier extends CI_Controller
    {
       parent::__construct();
       $this->load->model('bahan_m');
+      $this->load->library('unit_test');
    }
    public function index()
    {
@@ -33,14 +34,14 @@ class Supplier extends CI_Controller
         $data->setHarga((int)$this->input->post('cHarga'));
         $data->setKuantitas((int)$this->input->post('cKuantitas'));
         $data->setSupplier((int)$this->session->userdata('user_id'));
-        // TESTING
 
-        // echo '<pre>';
-        // var_dump($data);
-        // echo '</pre>';
-
-        // TESTING
-        $this->bahan_m->createBahan($data);
+        echo $this->unit->run(
+            $this->bahan_m->createBahan($data),
+            TRUE,
+            '<strong style="font-size: 30px;">Memasukan data kedalam tabel bahan</strong>',
+            '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
+        );
+        // redirect('supplier');
    }
 
    public function addKuantitas()
@@ -50,6 +51,7 @@ class Supplier extends CI_Controller
             $this->session->userdata('user_id'),
             $this->input->post('id')
         );
+        redirect('supplier');
    }
    
    public function logout()

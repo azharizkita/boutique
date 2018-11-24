@@ -6,6 +6,7 @@ class Greeter extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('user_m');
+		$this->load->library('unit_test');
 	}
 	public function index()
 	{
@@ -69,34 +70,35 @@ class Greeter extends CI_Controller
 			$RegistData->setNama($this->input->post("nameR", TRUE));
 			$RegistData->setPassword($this->input->post('passwordR', TRUE));
 			$RegistData->setPrivilege();
-			// TESTING
 
-			// echo '<pre>';
-			// var_dump($RegistData);
-			// echo '</pre>';
+			echo $this->unit->run(
+				$this->user_m->register($RegistData),
+				TRUE,
+				'<strong style="font-size: 30px;">Memasukan data kedalam tabel user</strong>',
+				'<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($RegistData, true).'</pre></div>'
+			);
 
-			// TESTING
-			$checking = $this->user_m->register($RegistData);
+			// $checking = $this->user_m->register($RegistData);
 
-			if ($checking != FALSE) {
-				$data['error'] = '<div class="alert alert-success alert-dismissible fade show" role="alert">
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-										</button>
-										<strong>Congrats!</strong><br>
-										Your account successfully created!
-										</div>';
-				$this->load->view('content/greeter', $data);
-			} else {
-				$data['error'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-										</button>
-										<strong>Error!</strong><br>
-										Either your username or password is invalid!
-										</div>';
-				$this->load->view('content/greeter', $data);
-			}
+			// if ($checking != FALSE) {
+			// 	$data['error'] = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+			// 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			// 							<span aria-hidden="true">&times;</span>
+			// 							</button>
+			// 							<strong>Congrats!</strong><br>
+			// 							Your account successfully created!
+			// 							</div>';
+			// 	$this->load->view('content/greeter', $data);
+			// } else {
+			// 	$data['error'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			// 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			// 							<span aria-hidden="true">&times;</span>
+			// 							</button>
+			// 							<strong>Error!</strong><br>
+			// 							Either your username or password is invalid!
+			// 							</div>';
+			// 	$this->load->view('content/greeter', $data);
+			// }
 		} else {
 			$this->load->view('login');
 		}

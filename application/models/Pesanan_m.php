@@ -53,7 +53,7 @@ class Pesanan_m extends CI_Model
 
       public function uploadPesanan($data)
       {
-            $this->db->insert('pesanan', $data);
+            return $this->db->insert('pesanan', $data);
       }
 
       public function updateStatusPesanan($status, $idPenjahit, $id)
@@ -63,6 +63,6 @@ class Pesanan_m extends CI_Model
                   'penjahit_id' => $idPenjahit
             );
             $this->db->where('id', $id);
-            $this->db->update('pesanan', $data);                                                                                                                                                                                
+            return $this->db->update('pesanan', $data);                                                                                                                                                                                
       }
 }
