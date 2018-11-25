@@ -5,7 +5,7 @@ class Pelanggan extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('pesanan_m');
+      $this->load->model('pesanan');
       $this->load->library('unit_test');
    }
    public function index()
@@ -52,23 +52,23 @@ class Pelanggan extends CI_Controller
                     $harga = ($hargaR->harga + 55000);
               }
         }
-        $data = new $this->pesanan_m($this->input->post('nama'));
+        $data = new $this->pesanan($this->input->post('nama'));
         $data->setGambar($this->upload->file_name);
         $data->setTipe($this->input->post('tipe'));
         $data->setUkuran($this->input->post('ukuran'));
-        $data->setBahan((int)$this->input->post('bahan'));
-        $data->setPelanggan((int)$this->session->userdata('user_id'));
-        $data->setJumlah((int)$this->input->post('jumlah'));
         $data->setStatus("To be confirmed");
+        $data->setPelanggan((int)$this->session->userdata('user_id'));
+        $data->setBahan((int)$this->input->post('bahan'));
+        $data->setPenjahit(NULL);
+        $data->setJumlah((int)$this->input->post('jumlah'));
         $data->setHarga($harga);        
 
         echo $this->unit->run(
-            $this->pesanan_m->uploadPesanan($data),
+            $this->pesanan->uploadPesanan($data),
             TRUE,
             '<strong style="font-size: 30px;">Memasukan data kedalam tabel pesanan</strong>',
             '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'
         );
-
         // redirect('pelanggan');
       }
    }

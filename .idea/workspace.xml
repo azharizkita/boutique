@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1bbcc2d3-08a1-4c39-947b-560ea55a1a83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Bahan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Pakaian.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Pesanan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Resi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Boutique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Greeter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Greeter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Kasir.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Kasir.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Pelanggan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Pelanggan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Penjahit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Penjahit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Supplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Bahan_m.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Pakaian_m.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Pesanan_m.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Resi_m.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/User_m.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/kasir.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/kasir.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/pelanggan/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/pelanggan/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/penjahit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/penjahit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/supplier.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" executionDataType="PHAR" phpInterpreterId="03ce2b6c-b2da-42c9-b9b9-ef8d97c6e86f" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <pharPath>$PROJECT_DIR$/composer.phar</pharPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>supplier_id</find>
+      <find>spesifikasi</find>
+      <find>kuantitas</find>
+      <find>supplier</find>
+      <find>namaPesa</find>
+      <find>_id</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/models/Bahan_m.php" />
+        <option value="$PROJECT_DIR$/application/models/Pakaian_m.php" />
+        <option value="$PROJECT_DIR$/application/models/Pesanan_m.php" />
+        <option value="$PROJECT_DIR$/application/models/Resi_m.php" />
+        <option value="$PROJECT_DIR$/application/views/content/supplier.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
+        <option value="$PROJECT_DIR$/application/models/Bahan.php" />
+        <option value="$PROJECT_DIR$/application/models/User.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Supplier.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Greeter.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Pelanggan.php" />
+        <option value="$PROJECT_DIR$/application/models/Pakaian.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
+        <option value="$PROJECT_DIR$/application/views/content/pelanggan/home.php" />
+        <option value="$PROJECT_DIR$/application/views/content/admin.php" />
+        <option value="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Boutique.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Kasir.php" />
+        <option value="$PROJECT_DIR$/application/models/Resi.php" />
+        <option value="$PROJECT_DIR$/application/views/content/kasir.php" />
+        <option value="$PROJECT_DIR$/application/views/content/penjahit.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Penjahit.php" />
+        <option value="$PROJECT_DIR$/application/models/Pesanan.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/mikey179/vfsStream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="15" />
+    <option name="y" value="30" />
+    <option name="width" value="1797" />
+    <option name="height" value="1020" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boutique" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="pelanggan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="boutique" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1bbcc2d3-08a1-4c39-947b-560ea55a1a83" name="Default Changelist" comment="" />
+      <created>1543063802120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543063802120</updated>
+      <workItem from="1543063811409" duration="17607000" />
+      <workItem from="1543131082217" duration="175000" />
+      <workItem from="1543131310112" duration="2368000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20150000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1233" height="735" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14492753" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="PHP-CGI Server" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29850745" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283582" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3283582" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9bb8b80-3b48-468f-8860-873ebb01fb32/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDL-DML.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="83" column="24" lean-forward="true" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/supplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/greeter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="66" column="42" lean-forward="true" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Greeter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Pelanggan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Supplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/pelanggan/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="186" column="46" lean-forward="true" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/pelanggan/boutique.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Resi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+          <folding>
+            <element signature="n#__construct#0;n#Resi#0;n#!!top" />
+            <element signature="n#setPenjahit#0;n#Resi#0;n#!!top" />
+            <element signature="n#setPesanan#0;n#Resi#0;n#!!top" />
+            <element signature="n#setPakaian#0;n#Resi#0;n#!!top" />
+            <element signature="n#setTotal#0;n#Resi#0;n#!!top" />
+            <element signature="n#setHarga#0;n#Resi#0;n#!!top" />
+            <element signature="n#setStatus#0;n#Resi#0;n#!!top" />
+            <element signature="n#getResi#0;n#Resi#0;n#!!top" />
+            <element signature="n#updateStatusPembayaran#0;n#Resi#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Pesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding>
+            <element signature="e#308#367#0#PHP" />
+            <element signature="n#__construct#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setGambar#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setTipe#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setUkuran#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setStatus#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setPelanggan#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setBahan#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setPenjahit#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setJumlah#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#setHarga#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#getPesanan#0;n#Pesanan#0;n#!!top" />
+            <element signature="n#uploadPesanan#0;n#Pesanan#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Pakaian.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#291#350#0#PHP" />
+            <element signature="n#__construct#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#443#480#0#PHP" />
+            <element signature="n#setTipe#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#562#600#0#PHP" />
+            <element signature="n#setBahan#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#686#730#0#PHP" />
+            <element signature="n#setSpesifikasi#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#840#879#0#PHP" />
+            <element signature="n#setUkuran#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#969#1008#0#PHP" />
+            <element signature="n#setGambar#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#1098#1140#0#PHP" />
+            <element signature="n#setKuantitas#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#1242#1280#0#PHP" />
+            <element signature="n#setHarga#0;n#Pakaian#0;n#!!top" />
+            <element signature="e#1366#1405#0#PHP" />
+            <element signature="n#setAuthor#0;n#Pakaian#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="48" />
+          <folding>
+            <element signature="e#205#265#0#PHP" />
+            <element signature="n#__construct#0;n#User#0;n#!!top" />
+            <element signature="e#370#408#0#PHP" />
+            <element signature="n#setEmail#0;n#User#0;n#!!top" />
+            <element signature="e#494#531#0#PHP" />
+            <element signature="n#setNama#0;n#User#0;n#!!top" />
+            <element signature="e#613#654#0#PHP" />
+            <element signature="n#setPassword#0;n#User#0;n#!!top" />
+            <element signature="e#752#789#0#PHP" />
+            <element signature="n#setType#0;n#User#0;n#!!top" />
+            <element signature="n#login#0;n#User#0;n#!!top" />
+            <element signature="n#register#0;n#User#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Kasir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Penjahit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Boutique.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/kasir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/penjahit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Bahan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#214#271#0#PHP" />
+            <element signature="n#__construct#0;n#Bahan#0;n#!!top" />
+            <element signature="e#364#408#0#PHP" />
+            <element signature="n#setSpesifikasi#0;n#Bahan#0;n#!!top" />
+            <element signature="e#518#556#0#PHP" />
+            <element signature="n#setHarga#0;n#Bahan#0;n#!!top" />
+            <element signature="e#642#684#0#PHP" />
+            <element signature="n#setKuantitas#0;n#Bahan#0;n#!!top" />
+            <element signature="e#786#827#0#PHP" />
+            <element signature="n#setSupplier#0;n#Bahan#0;n#!!top" />
+            <element signature="n#createBahan#0;n#Bahan#0;n#!!top" />
+            <element signature="n#addKuantitas#0;n#Bahan#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/\Admin">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\Admin</OriginalElement>
+          <nodes>
+            <node x="391.0" y="190.0">\Admin</node>
+            <node x="1118.0" y="190.0">\Boutique</node>
+            <node x="561.0" y="179.0">\Kasir</node>
+            <node x="212.0" y="190.0">\Pelanggan</node>
+            <node x="795.0" y="179.0">\Supplier</node>
+            <node x="962.0" y="190.0">\Greeter</node>
+            <node x="0.0" y="190.0">\Penjahit</node>
+            <node x="596.5" y="0.0">\CI_Controller</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\Penjahit" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="96.0" y="139.0" />
+              <point x="606.7142857142858" y="139.0" />
+              <point x="-61.28571428571428" y="59.5" />
+            </edge>
+            <edge source="\Boutique" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="1186.0" y="139.0" />
+              <point x="729.2857142857142" y="139.0" />
+              <point x="61.28571428571422" y="59.5" />
+            </edge>
+            <edge source="\Pelanggan" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="291.5" y="149.0" />
+              <point x="627.1428571428571" y="149.0" />
+              <point x="-40.85714285714289" y="59.5" />
+            </edge>
+            <edge source="\Kasir" target="\CI_Controller">
+              <point x="0.0" y="-70.0" />
+              <point x="0.0" y="59.5" />
+            </edge>
+            <edge source="\Admin" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="466.0" y="159.0" />
+              <point x="647.5714285714286" y="159.0" />
+              <point x="-20.428571428571445" y="59.5" />
+            </edge>
+            <edge source="\Greeter" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="1030.0" y="149.0" />
+              <point x="708.8571428571429" y="149.0" />
+              <point x="40.85714285714289" y="59.5" />
+            </edge>
+            <edge source="\Supplier" target="\CI_Controller">
+              <point x="0.0" y="-70.0" />
+              <point x="868.5" y="159.0" />
+              <point x="688.4285714285714" y="159.0" />
+              <point x="20.428571428571445" y="59.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="52.0" y="23.0" />
+          <SelectedNodes>
+            <node>\Admin</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Constants</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/C:/xampp/htdocs/boutique/application/models">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/application/models</OriginalElement>
+          <nodes>
+            <node x="" y="">\Resi</node>
+            <node x="" y="">\Pakaian</node>
+            <node x="" y="">\Pesanan</node>
+            <node x="" y="">\CI_Model</node>
+            <node x="" y="">\Bahan</node>
+            <node x="" y="">\User</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8105726872246696" x="550.6358695652174" y="330.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Constants</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/C:/xampp/htdocs/boutique/application/controllers">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/application/controllers</OriginalElement>
+          <nodes>
+            <node x="0.0" y="190.0">\Admin</node>
+            <node x="170.0" y="190.0">\Boutique</node>
+            <node x="1095.0" y="190.0">\Pelanggan</node>
+            <node x="649.0" y="179.0">\Kasir</node>
+            <node x="482.0" y="179.0">\Supplier</node>
+            <node x="326.0" y="190.0">\Greeter</node>
+            <node x="883.0" y="190.0">\Penjahit</node>
+            <node x="484.0" y="0.0">\CI_Controller</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\Penjahit" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="979.0" y="149.0" />
+              <point x="596.3571428571429" y="149.0" />
+              <point x="40.85714285714289" y="59.5" />
+            </edge>
+            <edge source="\Boutique" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="238.0" y="149.0" />
+              <point x="514.6428571428571" y="149.0" />
+              <point x="-40.85714285714289" y="59.5" />
+            </edge>
+            <edge source="\Pelanggan" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="1174.5" y="139.0" />
+              <point x="616.7857142857142" y="139.0" />
+              <point x="61.28571428571422" y="59.5" />
+            </edge>
+            <edge source="\Kasir" target="\CI_Controller">
+              <point x="0.0" y="-70.0" />
+              <point x="756.0" y="159.0" />
+              <point x="575.9285714285714" y="159.0" />
+              <point x="20.428571428571445" y="59.5" />
+            </edge>
+            <edge source="\Admin" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="75.0" y="139.0" />
+              <point x="494.2142857142858" y="139.0" />
+              <point x="-61.28571428571422" y="59.5" />
+            </edge>
+            <edge source="\Greeter" target="\CI_Controller">
+              <point x="0.0" y="-59.0" />
+              <point x="394.0" y="159.0" />
+              <point x="535.0714285714286" y="159.0" />
+              <point x="-20.428571428571445" y="59.5" />
+            </edge>
+            <edge source="\Supplier" target="\CI_Controller">
+              <point x="0.0" y="-70.0" />
+              <point x="0.0" y="59.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9207221350078493" x="534.6811594202899" y="159.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constants</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

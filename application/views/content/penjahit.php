@@ -8,10 +8,10 @@
     }
     $pesanan = $this->db->get('pesanan')->result();
     foreach ($pesanan as $post) {
-        foreach ($this->db->get_where('bahan', array('id' => $post->bahan_id))->result() as $parseBahan) {
+        foreach ($this->db->get_where('bahan', array('id' => $post->bahan))->result() as $parseBahan) {
             $namaBahan = $parseBahan->nama;
         }
-        $this->db->get_where('bahan', array('id' => $post->bahan_id))->result();
+        $this->db->get_where('bahan', array('id' => $post->bahan))->result();
     ?>
         <div class="col" style="padding-top: 25px">
             <div class="card" style="width: 18rem;">
@@ -47,10 +47,10 @@
                             ?>
                         </select>
                         <input type="text" name="id" value="<?php echo $post->id?>" hidden>
-                        <input type="text" name="bahan" value="<?php echo $post->bahan_id?>" hidden>
+                        <input type="text" name="bahan" value="<?php echo $post->bahan?>" hidden>
                         <input type="text" name="jumlah" value="<?php echo $post->jumlah?>" hidden>
                         <input type="text" name="harga" value="<?php echo $post->harga?>" hidden>
-                        <input type="text" name="pelanggan" value="<?php echo $post->pelanggan_id?>" hidden>
+                        <input type="text" name="pelanggan" value="<?php echo $post->pelanggan?>" hidden>
                         </form>
                         <div class="input-group-append">
                         <script type="text/javascript">

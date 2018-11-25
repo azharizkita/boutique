@@ -17,7 +17,7 @@
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>Made by: </strong><?php echo $dataPakaian->author_id?></li>
+                    <li class="list-group-item"><strong>Made by: </strong><?php echo $dataPakaian->author?></li>
                     <li class="list-group-item"><strong>Tipe:  </strong><?php echo $dataPakaian->tipe?></li>
                     <li class="list-group-item"><strong>Bahan: </strong><?php echo $dataPakaian->bahan?></li>
                     <li class="list-group-item"><strong>Spesifikasi: </strong><?php echo $dataPakaian->spesifikasi?></li>

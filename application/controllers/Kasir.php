@@ -5,7 +5,7 @@ class Kasir extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('resi_m');
+      $this->load->model('resi');
    }
    public function index()
    {
@@ -28,7 +28,7 @@ class Kasir extends CI_Controller
    
    public function acceptPembayaran()
    {
-        return $this->resi_m->acceptPembayaran(
+        return $this->resi->acceptPembayaran(
             $this->session->userdata('user_id'),
             $this->input->post('statusUp'),
             $this->input->post('id')
@@ -38,7 +38,7 @@ class Kasir extends CI_Controller
 
    public function updateStatusPembayaran()
    {
-        return $this->resi_m->updateStatusPembayaran(
+        return $this->resi->updateStatusPembayaran(
             $this->input->post('status'),
             $this->input->post('id')
         );

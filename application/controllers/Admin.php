@@ -5,7 +5,7 @@
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('pakaian_m');
+        $this->load->model('pakaian');
         $this->load->library('unit_test');
     }
     public function index()
@@ -36,7 +36,7 @@
         if (!$this->upload->do_upload('image')) {
           redirect('admin');
         } else {
-            $data = new $this->pakaian_m($this->input->post('nama'));
+            $data = new $this->pakaian($this->input->post('nama'));
             $data->setTipe($this->input->post('tipe'));
             $data->setBahan($this->input->post('bahan'));
             $data->setSpesifikasi($this->input->post('spesifikasi'));
@@ -47,7 +47,7 @@
             $data->setAuthor("Boutique");
 
             echo $this->unit->run(
-                $this->pakaian_m->createPakaian($data),
+                $this->pakaian->createPakaian($data),
                 TRUE,
                 '<strong style="font-size: 30px;">Memasukan data kedalam tabel pakaian</strong>',
                 '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'

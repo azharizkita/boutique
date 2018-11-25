@@ -72,7 +72,7 @@
                 <td><?php echo $pakaian->ukuran?></td>
                 <td><?php echo $pakaian->kuantitas?></td>
                 <td><?php echo $pakaian->harga?></td>
-                <td><?php echo $pakaian->author_id?></td>
+                <td><?php echo $pakaian->author?></td>
             </tr>
         <?php }?>
     </tbody>
@@ -104,17 +104,17 @@
             <?php
         }
         foreach ($this->db->get('pesanan')->result() as $pesanan) {
-            if ($pesanan->penjahit_id == null) {
+            if ($pesanan->penjahit == null) {
                 $namaPenjahit = "-";
             } else {
-                foreach ($this->db->get_where('user', array('id' => $pesanan->penjahit_id))->result() as $penjahit) {
+                foreach ($this->db->get_where('user', array('id' => $pesanan->penjahit))->result() as $penjahit) {
                     $namaPenjahit = $penjahit->nama;
                 }
             }
-            foreach ($this->db->get_where('user', array('id' => $pesanan->pelanggan_id))->result() as $pelanggan) {
+            foreach ($this->db->get_where('user', array('id' => $pesanan->pelanggan))->result() as $pelanggan) {
                 $namaPelanggan = $pelanggan->nama;
             }
-            foreach ($this->db->get_where('bahan', array('id' => $pesanan->bahan_id))->result() as $bahan) {
+            foreach ($this->db->get_where('bahan', array('id' => $pesanan->bahan))->result() as $bahan) {
                 $namaBahan = $bahan->nama;
             }
             ?>
@@ -159,35 +159,35 @@
             <?php
         }
         foreach ($this->db->get('resi')->result() as $resi) {
-            if ($resi->penjahit_id == null) {
+            if ($resi->penjahit == null) {
                 $namaPenjahit = "-";
             } else {
-                foreach ($this->db->get_where('user', array('id' => $resi->penjahit_id))->result() as $penjahit) {
+                foreach ($this->db->get_where('user', array('id' => $resi->penjahit))->result() as $penjahit) {
                     $namaPenjahit = $penjahit->nama;
                 }
             }
-            if ($resi->pesanan_id == null) {
+            if ($resi->pesanan == null) {
                 $namaPesanan = "-";
             } else {
-                foreach ($this->db->get_where('pesanan', array('id' => $resi->pesanan_id))->result() as $pesanan) {
+                foreach ($this->db->get_where('pesanan', array('id' => $resi->pesanan))->result() as $pesanan) {
                     $namaPesanan = $penjahit->nama;
                 }
             }
-            if ($resi->pakaian_id == null) {
+            if ($resi->pakaian == null) {
                 $namaPakaian = "-";
             } else {
-                foreach ($this->db->get_where('pakaian', array('id' => $resi->pakaian_id))->result() as $pakaian) {
+                foreach ($this->db->get_where('pakaian', array('id' => $resi->pakaian))->result() as $pakaian) {
                     $namaPakaian = $pakaian->nama;
                 }
             }
-            if ($resi->kasir_id == null) {
+            if ($resi->kasir == null) {
                 $namaKasir = "-";
             } else {
-                foreach ($this->db->get_where('user', array('id' => $resi->kasir_id))->result() as $kasir) {
+                foreach ($this->db->get_where('user', array('id' => $resi->kasir))->result() as $kasir) {
                     $namaKasir = $kasir->nama;
                 }
             }
-            foreach ($this->db->get_where('user', array('id' => $resi->pelanggan_id))->result() as $pelanggan) {
+            foreach ($this->db->get_where('user', array('id' => $resi->pelanggan))->result() as $pelanggan) {
                 $namaPelanggan = $pelanggan->nama;
             }
             ?>
@@ -229,7 +229,7 @@
             <?php
         }
         foreach ($this->db->get('bahan')->result() as $bahan) {
-            foreach ($this->db->get_where('user', array('id' => $bahan->supplier_id))->result() as $supplier) {
+            foreach ($this->db->get_where('user', array('id' => $bahan->supplier))->result() as $supplier) {
                 $namaSupplier = $supplier->nama;
             }
             ?>

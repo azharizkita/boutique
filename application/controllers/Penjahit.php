@@ -5,9 +5,9 @@ class Penjahit extends CI_Controller
    public function __construct()
    {
       parent::__construct();
-      $this->load->model('pesanan_m');
-      $this->load->model('resi_m');
-      $this->load->model('bahan_m');
+      $this->load->model('pesanan');
+      $this->load->model('resi');
+      $this->load->model('bahan');
       $this->load->library('unit_test');
    }
    public function index()
@@ -28,25 +28,27 @@ class Penjahit extends CI_Controller
             redirect('greeter');
         }
    }
+
    public function updateStatusPesanan()
    {
-        $this->pesanan_m->updateStatusPesanan(
+        $this->pesanan->updateStatusPesanan(
             $this->input->post('status'),
             $this->session->userdata('user_id'),
             $this->input->post('id')
         );
 
         if ($this->input->post('status') == "Accepted") {
-            $data = new $this->resi_m($this->input->post('pelanggan'));
-            $data->setKasir();
+            $data = new $this->resi($this->input->post('pelanggan'));
+            $data->setKasir(NULL);
             $data->setPenjahit($this->session->userdata('user_id'));
             $data->setPesanan($this->input->post('id'));
+            $data->setPakaian(NULL);
             $data->setTotal($this->input->post('jumlah'));
             $data->setHarga($this->input->post('harga'));
             $data->setStatus("To be accepted");
 
             echo $this->unit->run(
-                $this->resi_m->createResi($data),
+                $this->resi->createResi($data),
                 TRUE,
                 '<strong style="font-size: 30px;">Memasukan data kedalam tabel resi</strong>',
                 '<p>Berikut ini adalah data yang di upload ke database: </p><div><pre>'.var_export($data, true).'</pre></div>'

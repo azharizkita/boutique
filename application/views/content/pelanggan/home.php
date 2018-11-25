@@ -8,10 +8,10 @@
         <?php
     }
     foreach ($pesanan as $post) {
-        foreach ($this->db->get_where('bahan', array('id' => $post->bahan_id))->result() as $parseBahan) {
+        foreach ($this->db->get_where('bahan', array('id' => $post->bahan))->result() as $parseBahan) {
             $namaBahan = $parseBahan->nama;
         }
-        foreach ($this->db->get_where('user', array('id' => $post->pelanggan_id))->result() as $parsePelanggan) {
+        foreach ($this->db->get_where('user', array('id' => $post->pelanggan))->result() as $parsePelanggan) {
             $namaPelanggan = $parsePelanggan->nama;
         }
     ?>
