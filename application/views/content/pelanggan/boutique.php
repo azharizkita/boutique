@@ -15,11 +15,16 @@
             <div class="card-header">
                 <h5 class="card-title"><?php echo $dataPakaian->nama?></h5>
             </div>
+            <?php
+            foreach ($this->db->get_where('bahan', array('id' => $dataPakaian->bahan))->result() as $bahan) {
+                $namaBahan = $bahan->nama;
+            }
+            ?>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Made by: </strong><?php echo $dataPakaian->author?></li>
                     <li class="list-group-item"><strong>Tipe:  </strong><?php echo $dataPakaian->tipe?></li>
-                    <li class="list-group-item"><strong>Bahan: </strong><?php echo $dataPakaian->bahan?></li>
+                    <li class="list-group-item"><strong>Bahan: </strong><?php echo $namaBahan?></li>
                     <li class="list-group-item"><strong>Spesifikasi: </strong><?php echo $dataPakaian->spesifikasi?></li>
                     <li class="list-group-item"><strong>Ukuran: </strong><?php echo $dataPakaian->ukuran?></li>
                     <li class="list-group-item"><strong>IDR<?php echo $dataPakaian->harga?></strong></li>

@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bbcc2d3-08a1-4c39-947b-560ea55a1a83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Bahan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Pakaian.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Pesanan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Resi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Boutique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Greeter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Greeter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Kasir.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Kasir.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Pelanggan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Pelanggan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Penjahit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Penjahit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Bahan_m.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Pakaian_m.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Pesanan_m.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Resi_m.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/User_m.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/kasir.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/kasir.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/pelanggan/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/pelanggan/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/penjahit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/penjahit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/supplier.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +30,26 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/content/pelanggan/boutique.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/content/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="116" selection-start-line="116" selection-end-line="119" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -87,7 +82,6 @@
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/views/content/pelanggan/home.php" />
         <option value="$PROJECT_DIR$/application/views/content/admin.php" />
-        <option value="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" />
         <option value="$PROJECT_DIR$/application/controllers/Boutique.php" />
         <option value="$PROJECT_DIR$/application/controllers/Kasir.php" />
         <option value="$PROJECT_DIR$/application/models/Resi.php" />
@@ -95,6 +89,7 @@
         <option value="$PROJECT_DIR$/application/views/content/penjahit.php" />
         <option value="$PROJECT_DIR$/application/controllers/Penjahit.php" />
         <option value="$PROJECT_DIR$/application/models/Pesanan.php" />
+        <option value="$PROJECT_DIR$/application/views/content/pelanggan/boutique.php" />
       </list>
     </option>
   </component>
@@ -141,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,6 +189,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,19 +223,20 @@
       <workItem from="1543063811409" duration="17607000" />
       <workItem from="1543131082217" duration="175000" />
       <workItem from="1543131310112" duration="2368000" />
+      <workItem from="1543180058624" duration="170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20150000" />
+    <option name="totallyTimeSpent" value="20320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1233" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14492753" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14773698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="PHP-CGI Server" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29850745" />
@@ -253,6 +249,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3283582" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -338,20 +335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/content/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="186" column="46" lean-forward="true" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/content/pelanggan/boutique.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -569,11 +552,12 @@
             <node>\Admin</node>
           </SelectedNodes>
           <Categories>
+            <Category>Fields</Category>
             <Category>Constants</Category>
             <Category>Constructors</Category>
             <Category>Methods</Category>
-            <Category>Fields</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
@@ -603,14 +587,15 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.8105726872246696" x="550.6358695652174" y="330.5" />
+          <settings layout="Hierarchic Group" zoom="0.8105726872246696" x="551.0" y="331.0" />
           <SelectedNodes />
           <Categories>
+            <Category>Fields</Category>
+            <Category>Constants</Category>
             <Category>Constructors</Category>
             <Category>Methods</Category>
-            <Category>Constants</Category>
-            <Category>Fields</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
@@ -673,7 +658,7 @@
               <point x="0.0" y="59.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.9207221350078493" x="534.6811594202899" y="159.5" />
+          <settings layout="Hierarchic Group" zoom="0.9207221350078493" x="535.0" y="160.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -681,7 +666,22 @@
             <Category>Constructors</Category>
             <Category>Methods</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="116" selection-start-line="116" selection-end-line="119" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/content/pelanggan/boutique.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
